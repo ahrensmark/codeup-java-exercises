@@ -60,6 +60,10 @@ public class HelloWorld {
         e -= d;
         System.out.println(d);
         System.out.println(e);
+
+        String greeting = "Salutations";
+        String name = "codeup";
+        System.out.format("%s, %s!", greeting, name);
     }
 }
 //
