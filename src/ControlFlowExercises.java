@@ -42,17 +42,31 @@ public class ControlFlowExercises {
             a -= 5;
         } while (a >= -10);
 
-        int b=2;
-        int c = 1;
+        long b = 2;
+        //int c = 1;
         do {
-            c = b * b;
-            System.out.println(c);
-        } while (c < 2);
+            System.out.println(b);
+            b = b * b;
+        } while (b < 1000000);
 
 
 //        Refactor the previous two exercises to use a for loop instead.
 
+        for(int l = 5; l <= 15; l += 1) {
+            System.out.println(l);
+        }
 
+        for(int m = 0; m <= 100; m += 2){
+            System.out.println(m);
+        }
+
+        for(int o = 100; o >= -10; o -= 5) {
+            System.out.println(o);
+        }
+
+        for(long p = 2; p < 1000000; p *= p) {
+            System.out.println(p);
+        }
 
     }
 }
