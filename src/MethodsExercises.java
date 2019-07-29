@@ -1,8 +1,8 @@
 
 
 import java.util.Scanner;
+public class MethodsExercises {
 
-    //        public class MethodsExercises {
 // Addition
 //                public static int Addition(int a, int b) {
 //                    return a + b;
@@ -49,52 +49,38 @@ import java.util.Scanner;
 //                }
 //            }
 
-                //Recursion
-//        Create your multiplication method without the * operator (Hint: a loop might be helpful).
-//        Do the above with recursion
 
-//                   public static void Multiplication(int i, int j) {
-//                       if (i < 1)
-//                           return;
-//                       else {
-//                           Scanner sc=new Scanner(System.in);
-//                           System.out.print("Enter first number: ");
-//                           int i=sc.nextInt();
-//                           System.out.print("Enter second number: ");
-//                           int j=sc.nextInt();
-//                           int k = i * j;
-//                           //System.out.printf("%d ", test);
-//                           Multiplication(test - 1); // statement 2
-//                           System.out.printf("%d ", test);
-//                           return;
-//                       }
-//
-//                   }
-//                        public static void main(String[] args)
-//                        {
-//                            //int test = 3;
-//                            Multiplication(3);
-//                        }
-//                    }
+    //Recursion
+//        Create your Exponential method with recursion (Hint: a loop might be helpful).
 
-// This code is contributed by
-// Smitha Dinesh Semwal
 
-//Division
-//            public static double Division(double i, double j) {
-//                return i / j;
+//            public static int power(int base, int powerRaised) {
+//                if (powerRaised != 0)
+//                    return (base * power(base, powerRaised - 1));
+//                else
+//                    return 1;
 //            }
+//            public static void main(String[] args) {
+//                int base = 3, powerRaised = 4;
+//                int result = power(base, powerRaised);
+//                System.out.printf("%d^%d = %d", base, powerRaised, result);
+//            }
+
+    //Division
+//                public static double Division(double i, double j) {
+//                    return i / j;
+//                }
 //
 //                public static void main(String[] args) {
-//                    Scanner sc=new Scanner(System.in);
+//                    Scanner sc = new Scanner(System.in);
 //                    System.out.print("Enter first number: ");
-//                    double i=sc.nextInt();
+//                    double i = sc.nextInt();
 //                    System.out.print("Enter second number: ");
-//                    double j=sc.nextInt();
+//                    double j = sc.nextInt();
 //
-//                    System.out.println(Division(i,j));
+//                    System.out.println(Division(i, j));
 //                }
-//            }
+
 
 // Modulus
 //            public static int modulus(int i, int j) {
@@ -116,28 +102,30 @@ import java.util.Scanner;
 //
 
 
-//     2. Create a method that validates that user input is in a certain range
+    //     2. Create a method that validates that user input is in a certain range
 //
 //        The method signature should look like this:
 //
+
+
+//    public static void main(String[] args) {
+//        System.out.print("Enter a number between 1 and 10: ");
+//        int userInput = getInteger(1, 10);
+//        System.out.println(userInput);
 //
-//                public static void getInteger(int min, int max); {
-//                    if(min < 1 && max > 10) {
-//                        System.out
-//                } else if (min >= 1 && max <= 10){
-//                        return()
-//                    }
-////
-//                public static void main(String[] args) {
-//                    Scanner sc=new Scanner(System.in);
-//                    System.out.print("Enter a number between 1 and 10: ");
-//                    int userInput = getInteger(1, 10);
-//
-//                }
-//            }
+//    }
+//    public static int getInteger(int min, int max) {
+//        if (min >= 1 && max <= 10)
+//            return userInput;
+//        else
+//            return 1;
+//    }
+//}
+
+
 //        If the input is invalid, prompt the user again.
 
-//      #3   Calculate the factorial of a number.
+//      3.   Calculate the factorial of a number.
 //
 //                Prompt the user to enter an integer from 1 to 10.
 //                Display the factorial of the number entered by the user.
@@ -155,4 +143,35 @@ import java.util.Scanner;
 //                        3! = 1 x 2 x 3       = 6
 //                        4! = 1 x 2 x 3 x 4   = 24
 
+    public static int factorial(int num) {
+//        String message = "";
+        if (num == 1)
+            return num;
+        return num * factorial(num - 1);
+    }
 
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        do {
+        System.out.print("Enter an integer between 1 & 10: ");
+        long userInput = sc.nextInt();
+            if (userInput < 1 || userInput > 10) {
+                System.out.println("Number is not between 1 and 10");
+
+            } else if (userInput >= 1 && userInput <= 10){
+                for (int i = 1; i <= userInput; i++)
+                System.out.format("%s! = %s\n", i, MethodsExercises.factorial(i));
+                System.out.print("Continue(Y/N)? ");
+                String confirm = sc.next().toLowerCase();
+                if (confirm.equals("n")) {
+                     break;
+                }
+            }
+        }while (true);
+    }
+}
+
+//                        1! = 1               = 1
+//                        2! = 1 x 2           = 2
+//                        3! = 1 x 2 x 3       = 6
+//                        4! = 1 x 2 x 3 x 4   = 24
