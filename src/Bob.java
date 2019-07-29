@@ -9,7 +9,7 @@ public class Bob {
 //        He says 'Fine. Be that way!' if you address him without actually saying anything. (empty input)
 //        He answers 'Whatever.' to anything else.
 //        Write the Java code necessary so that a user of your command line application can have a conversation with Bob.
-
+        boolean talking = true;
         System.out.print("Start a conversation: ");
         do {
         String userInput = scanner.nextLine();
@@ -24,12 +24,13 @@ public class Bob {
                 //System.out.println(userInput);
                 System.out.println("Fine. Be that way!");
             } else if(userInput.equalsIgnoreCase("bye")){
-                System.out.println("Bob gets on his phone.");
-                break;
+
+                talking = false;
             } else {
                 System.out.println("Whatever");
             }
-        } while(true);
+        } while(talking);
+        System.out.println("Bob gets on his phone.");
     }
 }
 
