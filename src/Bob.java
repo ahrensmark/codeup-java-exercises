@@ -11,22 +11,25 @@ public class Bob {
 //        Write the Java code necessary so that a user of your command line application can have a conversation with Bob.
 
         System.out.print("Start a conversation: ");
-        String userInput = scanner.next();
-        boolean jest = true;
         do {
+        String userInput = scanner.nextLine();
+        System.out.println(userInput);
+
             if (userInput.endsWith("?")) {
-                System.out.println(userInput);
                 System.out.println("Sure.");
             } else if (userInput.endsWith("!")) {
-                System.out.println(userInput);
+                //System.out.println(userInput);
                 System.out.println("Whoa, chill out!");
-            } else if (userInput.endsWith(" ")) {
-                System.out.println(userInput);
+            } else if (userInput.isEmpty()) {
+                //System.out.println(userInput);
                 System.out.println("Fine. Be that way!");
+            } else if(userInput.equalsIgnoreCase("bye")){
+                System.out.println("Bob gets on his phone.");
+                break;
             } else {
                 System.out.println("Whatever");
             }
-        } while(userInput == "");
+        } while(true);
     }
 }
 
