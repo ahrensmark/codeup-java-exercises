@@ -1,39 +1,35 @@
 
+
+
 import java.util.Arrays;
+
 public class ArraysExercises {
-//
-//    String[] name = new String[10];
-//        public static String addPerson() {
-//
-//        for (int i=0;i<name.length;i++) {
-//            if (name[i] == null) {
-//                name[i] = a;
-//                break;
-//            }
-//        }
-//    }
-//
+
+    private static Person[] addPerson(Person[] group, Person newMember) {
+        Person[] newGroup = Arrays.copyOf(group, group.length + 1);
+        newGroup[newGroup.length-1] = newMember;
+        return newGroup;
+    }
+
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(numbers));
 
-//       use person method built earlier
-        Person [] people = new Person[3];
-        people[0] = new Person("Aaron");
-        people[1] = new Person("Nick");
-        people[2] = new Person("Mario");
+        Person[] people = new Person[3];
+        people[0] = new Person("Nick");
+        people[1] = new Person("Mario");
+        people[2] = new Person("Joey");
+//        Person[] people = {new Person("Larry"), new Person("Moe"), new Person("Curly")};
 
+//        for (Person character : people) {
+//            System.out.println(character.getName());
+//        }
 
- /*
-    or Person[] people = {new Person("Aaron"),new Person("Nick"),new Person("Mario"};
-
-        for (String character : Person) {
-            System.out.println(character.getName);
-
-            }
-
+        Person[] newGroup = addPerson(people, new Person("Mister Rogers"));
+//        Arrays.toString(newGroup);
+        for (Person character : newGroup) {
+            System.out.println(character.getName());
         }
-*/
+
     }
 }
-
