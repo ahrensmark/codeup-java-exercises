@@ -1,42 +1,68 @@
 package shapes;
 
-import org.w3c.dom.css.Rect;
+
+//Change your existing Rectangle class to inherit from Quadrilateral and implement Measurable.
+//
+//        IntelliJ can automatically create the skeleton of all the methods that need to be implemented.
 
 //import java.util.Scanner;
-public class Rectangle {
+public class Rectangle extends Quadrilateral implements Measurable {
+    public Rectangle(double length, double width) {
+        super(length, width);
+    }
 
-    //Rectangle has to 2 fields
-        protected int length;
-        protected int width;
+    @Override
+    public double getPerimeter() {
+        return (2 * (this.length + this.width));
+    }
 
+    @Override
+    public double getArea() {
+        return this.length * this.width;
+    }
 
-    // the Rectangle class has one constructor
-    public Rectangle(int length, int width)
-    {
-        this.length = length;
-        this.width = width;
+    //@Override
+    public void setLength() {
 
     }
 
-    // the Rectangle class has two methods
-    public int getArea()
-    {
-        return length * width;
-    }
-
-    public int getPerimeter()
-    {
-         return 2 * length + 2 * width;
-    }
-
-
-    // toString() method to print info of Rectangle
-    public String toString()
-    {
-        return("Area of rectangle is: "+ getArea() + "\n" +
-                "Perimeter of rectangle is:" + getPerimeter());
+    //@Override
+    public void setWidth() {
 
     }
+}
+//
+//    //Rectangle has to 2 fields
+//        protected int length;
+//        protected int width;
+//
+//
+//    // the Rectangle class has one constructor
+//    public Rectangle(int length, int width)
+//    {
+//        this.length = length;
+//        this.width = width;
+//
+//    }
+//
+//    // the Rectangle class has two methods
+//    public int getArea()
+//    {
+//        return this.length * this.width;
+//    }
+//
+//    public int getPerimeter()
+//    {
+//         return 2 * this.length + 2 * this.width;
+//    }
+//
+//
+//    // toString() method to print info of Rectangle
+//    public String toString()
+//    {
+//        return("Area of rectangle is: "+ getArea() + "\n" +
+//                "Perimeter of rectangle is:" + getPerimeter());
+//
 // Extend class
 //    class Square extends Rectangle {
 //    //Override perimeter
@@ -76,7 +102,7 @@ public class Rectangle {
 //        System.out.println(box2.toString());
 //
 //    }
-}
+//}
 //    create a variable of the type Rectangle named box1 and assign it a new instance of the Rectangle class with a width of 4 and a length of 5
 //        verify that the getPerimeter and getArea methods return 18 and 20, respectively.
 //        create a variable of the type Rectangle named box2 and assign it a new instance of the Square class that has a side value of 5.
