@@ -4,22 +4,26 @@ public class Person {
 
     private String name;
 
-    public Person(String name) {
+    public Person(String name)
+    {
         this.name = name;
     }
 
     // returns the person's name
-    public String getName() {
+    public String getName()
+    {
         return this.name;
     }
 
     // changes the name property to the passed value
-    public void setName(String newName) {
+    public void setName(String newName)
+    {
         name = newName;
     }
 
     // prints a message to the console using the person's name
-    public void sayHello() {
+    public void sayHello()
+    {
         System.out.printf("Hello, %s%n", this.name);
     }
 
