@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GradesApplication {
-    static Map<String,Student> students;
+    static HashMap<String,Student> students;
 
     private static void init() {
         students = new HashMap<String,Student>();
@@ -28,13 +28,12 @@ public class GradesApplication {
         Student Nick = new Student("Nick");
         Nick.addGrade(43);
         Nick.addGrade(26);
-        Nick.addGrade(0);
         Nick.addGrade(46);
 
-        students.put("Mark", Mark);
-        students.put("Aaron", Aaron);
-        students.put("Susan", Susan);
-        students.put("Nick", Nick);
+        students.put("ahrensmark", Mark);
+        students.put("aaronsifuentes47", Aaron);
+        students.put("susanlin0705", Susan);
+        students.put("nicksosa456", Nick);
 
     }
     private static void welcome() {
@@ -53,6 +52,7 @@ public class GradesApplication {
         if (students.containsKey(key)) {
             System.out.printf("Name: %s - Github Username: %s%n", students.get(key).getName(),key);
             System.out.printf("Current Average: %.2f%n%n", students.get(key).getGradeAverage());
+            //System.out.printf("Student grades are: %s", students.get(key).addGrade());
             // output student record
         } else {
             System.out.printf("Sorry, no student found with the github username of \"%s\".%n", key);

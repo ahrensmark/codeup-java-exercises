@@ -1,7 +1,8 @@
 package util;
 
 import java.util.Scanner;
-
+// A Class is a blueprint that is used to create Object. The Class defines what object can do.  Core properties include the data types and methods that may be used by the object.
+//A Java object is a combination of data and procedures working on the available data. An object has a state and behavior. The state of an object is stored in fields (variables), while methods (functions) display the object's behavior. Objects are created from templates known as classes.
 public class Input {
 
     private Scanner scanner;
@@ -33,7 +34,14 @@ public class Input {
     public int getInt(int min, int max) {
         do {
             System.out.printf("Enter a number between %d and %d : ", min, max);
-            int answer = this.scanner.nextInt();
+            String input = this.scanner.nextLine();
+            int answer;
+            try {
+                answer = Integer.valueOf(input);
+            } catch (NumberFormatException ex) {
+                continue;
+            }
+
             if (answer >= min && answer <= max) {
                 return answer;
             }
@@ -50,8 +58,14 @@ public class Input {
 
     public double getDouble(double min, double max) {
         do {
-            System.out.printf("Enter a number between %d and %d : ", min, max);
-            double answer = this.scanner.nextDouble();
+            System.out.printf("Enter a number between %.2f and %.2yf : ", min, max);
+            String input = this.scanner.nextLine();
+            double answer;
+            try {
+                answer = Double.valueOf(input);
+            } catch (NumberFormatException ex) {
+                continue;
+            }
             if (answer >= min && answer <= max) {
                 return answer;
             }
@@ -66,11 +80,16 @@ public class Input {
         return this.getDouble();
     }
 
+
+//    Research the .valueOf method on the Integer class. You will find that it can also be used to parse integers in different bases. Use this functionality to create two new methods, getBinary and getHex that will accept a string that is a number in binary or hexadecimal.
+
     public static void main(String[] args) {
         Input input = new Input();
+
         System.out.println("Enter your answer (Y/N)?");
         System.out.println(input.yesNo());
-        System.out.println(input.getInt(1,10));
+        //System.out.println(input.getInt(1,10));
+        System.out.println(input.getDouble(1,10));
     }
 }
 

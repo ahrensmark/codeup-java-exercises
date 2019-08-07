@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
+    // create properties
     private String name;
-    private List<Integer> grades;
+    private ArrayList<Integer> grades;
 
     public Student(String name) {
         this.name = name;
@@ -16,13 +17,15 @@ public class Student {
     }
 
     // returns the student's name
-    public String getName() {
-        return this.name;
-    }
+    public String getName()
+        { return this.name;
+        }
     // adds the given grade to the grades property
-    public void addGrade(int grade) {
-        grades.add(grade);
-    }
+    public void addGrade(int grade)
+        { grades.add(grade);
+        }
+
+
     // returns the average of the students grades
     public double getGradeAverage(){
         double total = 0;
@@ -35,11 +38,11 @@ public class Student {
     }
 
     public static void main(String[] args) {
-        Student dwight = new Student("Mark");
-        dwight.addGrade(90);
-        dwight.addGrade(85);
-        dwight.addGrade(40);
-        System.out.println(dwight.getGradeAverage());
+        Student mark = new Student("Mark");
+        mark.addGrade(90);
+        mark.addGrade(85);
+        mark.addGrade(40);
+        System.out.println(mark.getGradeAverage());
     }
 
 }
