@@ -49,6 +49,9 @@ public class Input {
     }
 
     public int getInt() {
+        String answer;
+        answer = this.scanner.nextLine();
+
         return this.scanner.nextInt();
     }
     public int getInt(String prompt) {
