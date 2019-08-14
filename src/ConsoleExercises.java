@@ -58,8 +58,6 @@ public class ConsoleExercises {
 
     }
 }
-
-//
 //        Bonuses
 //
 //        Accept decimal entries.
