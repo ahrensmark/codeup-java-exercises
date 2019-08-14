@@ -84,7 +84,7 @@ public class Input {
     }
 
 
-//    Research the .valueOf method on the Integer class. You will find that it can also be used to parse integers in different bases. Use this functionality to create two new methods, getBinary and getHex that will accept a string that is a number in binary or hexadecimal.
+////    Research the .valueOf method on the Integer class. You will find that it can also be used to parse integers in different bases. Use this functionality to create two new methods, getBinary and getHex that will accept a string that is a number in binary or hexadecimal.
 
     public static void main(String[] args) {
         Input input = new Input();

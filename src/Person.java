@@ -21,7 +21,7 @@ public class Person {
         name = newName;
     }
 
-    // prints a message to the console using the person's name
+    //// prints a message to the console using the person's name
     public void sayHello()
     {
         System.out.printf("Hello, %s%n", this.name);
