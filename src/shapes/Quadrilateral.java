@@ -29,7 +29,7 @@ abstract class Quadrilateral extends Shape implements Measurable {
 
 }
 
-//    Inside of shapes, create an abstract Quadrilateral class that extends Shape and implements Measurable. This class should have:
+////    Inside of shapes, create an abstract Quadrilateral class that extends Shape and implements Measurable. This class should have:
 //
 //protected properties for length and width.
 //        a constructor that accepts two numbers for the length and width and sets those properties.
