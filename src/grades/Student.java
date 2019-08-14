@@ -31,7 +31,7 @@ public class Student {
         double total = 0;
         for (int i = 0; i<this.grades.size(); i++) {
             total += this.grades.get(i);
-//        for (Integer grade : this.grades) {
+////        for (Integer grade : this.grades) {
 //            total += grade;
         }
         return Math.round(total / this.grades.size());
