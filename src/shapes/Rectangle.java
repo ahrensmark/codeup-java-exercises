@@ -31,7 +31,7 @@ public class Rectangle extends Quadrilateral implements Measurable {
 
     }
 }
-//
+////
 //    //Rectangle has to 2 fields
 //        protected int length;
 //        protected int width;

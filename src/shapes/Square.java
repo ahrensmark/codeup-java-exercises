@@ -4,7 +4,7 @@ package shapes;
 
 import shapes.Rectangle;
 //Change your existing Square class to extend Quadrilateral.
-//
+////
 //        Because the length of all sides of a square are the same, the methods for setting the length and the width should set both protected properties.
 
     public class Square extends Quadrilateral {
