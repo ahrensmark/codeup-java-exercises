@@ -23,7 +23,7 @@ public class ArraysExercises {
 
 //        for (Person character : people) {
 //            System.out.println(character.getName());
-//        }
+////        }
 
         Person[] newGroup = addPerson(people, new Person("Mister Rogers"));
 //        Arrays.toString(newGroup);
