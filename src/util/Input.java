@@ -14,6 +14,7 @@ public class Input {
     public String getString() {
         return this.scanner.nextLine();
     }
+
     public String getString(String prompt) {
         System.out.println(prompt);
         return this.getString();
@@ -21,8 +22,8 @@ public class Input {
 
     public boolean yesNo() {
         String answer = this.scanner.nextLine();
-        if (answer.equalsIgnoreCase("Y")
-                || answer.equalsIgnoreCase("Yes")) {
+        if (answer.equalsIgnoreCase("y")
+                || answer.equalsIgnoreCase("yes")) {
             return true;
         } else return false;
     }
@@ -31,9 +32,25 @@ public class Input {
         return this.yesNo();
     }
 
+    public int getInt() {
+        String answer;
+        answer = this.scanner.nextLine();
+        try {
+            return Integer.valueOf(answer);
+        } catch (NumberFormatException ex) {
+            System.out.printf("%s is not an integer%n", answer);
+            return getInt();
+        }
+    }
+    public int getInt(String prompt) {
+        System.out.println(prompt);
+        return this.getInt();
+    }
+
     public int getInt(int min, int max) {
         do {
-            System.out.printf("Enter a number between %d and %d : ", min, max);
+            System.out.printf("Please enter a number between %d and %d : ", min, max);
+
             String input = this.scanner.nextLine();
             int answer;
             try {
@@ -48,21 +65,11 @@ public class Input {
         } while (true);
     }
 
-    public int getInt() {
-        String answer;
-        answer = this.scanner.nextLine();
-
-        return this.scanner.nextInt();
-    }
-    public int getInt(String prompt) {
-        System.out.println(prompt);
-        return this.getInt();
-    }
-
     public double getDouble(double min, double max) {
         do {
-            System.out.printf("Enter a number between %.2f and %.2yf : ", min, max);
+            System.out.printf("Please enter a number between %f and %f : ", min, max);
             String input = this.scanner.nextLine();
+
             double answer;
             try {
                 answer = Double.valueOf(input);
@@ -76,24 +83,29 @@ public class Input {
 
     }
     public double getDouble() {
-        return this.scanner.nextDouble();
+        String answer;
+        answer = this.scanner.nextLine();
+        try {
+            return Double.valueOf(answer);
+        } catch (NumberFormatException ex) {
+            System.out.printf("%s is not a number%n", answer);
+            return getDouble();
+        }
     }
     public double getDouble(String prompt) {
         System.out.println(prompt);
         return this.getDouble();
     }
-
-
-////    Research the .valueOf method on the Integer class. You will find that it can also be used to parse integers in different bases. Use this functionality to create two new methods, getBinary and getHex that will accept a string that is a number in binary or hexadecimal.
-
+    ////    Research the .valueOf method on the Integer class. You will find that it can also be used to parse integers in different bases. Use this functionality to create two new methods, getBinary and getHex that will accept a string that is a number in binary or hexadecimal.
     public static void main(String[] args) {
         Input input = new Input();
+//        System.out.println("Enter your answer (y|n)?");
+//        System.out.println(input.yesNo());
+        System.out.println(input.getDouble());
 
-        System.out.println("Enter your answer (Y/N)?");
-        System.out.println(input.yesNo());
-        //System.out.println(input.getInt(1,10));
-        System.out.println(input.getDouble(1,10));
     }
 }
+
+
 
 
